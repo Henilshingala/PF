@@ -74,13 +74,17 @@ export const metadata: Metadata = {
   },
 };
 
+import DesktopOnly from "@/components/DesktopOnly";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${syne.variable} ${jakarta.variable} scroll-smooth scroll-pt-[90px] overflow-x-hidden`}>
       <body className="overflow-x-hidden bg-[#050816]">
-        {children}
+        <DesktopOnly>
+          {children}
+        </DesktopOnly>
       </body>
     </html>
   );
