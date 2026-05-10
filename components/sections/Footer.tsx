@@ -123,7 +123,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://raw.githubusercontent.com/Henilshingala/PF/main/henil_CV-1.pdf"
+              href="/henil_CV-1.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-blue-500/40 hover:bg-white/[0.06] hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]"

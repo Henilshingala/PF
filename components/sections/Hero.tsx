@@ -66,7 +66,7 @@ export default function Hero() {
           <motion.a whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85 }} href="#projects" className="w-full rounded-full bg-accent px-6 py-3.5 text-base font-semibold text-white shadow-[0_0_20px_rgba(37,99,235,0.2)] transition hover:bg-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] sm:w-auto sm:px-8 sm:py-4">
             View My Work →
           </motion.a>
-          <motion.a whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.95 }} href="https://raw.githubusercontent.com/Henilshingala/PF/main/henil_CV-1.pdf" target="_blank" rel="noopener noreferrer" className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/5 sm:w-auto sm:px-8 sm:py-4">
+          <motion.a whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.95 }} href="/henil_CV-1.pdf" target="_blank" rel="noopener noreferrer" className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/5 sm:w-auto sm:px-8 sm:py-4">
             Download Resume
           </motion.a>
         </div>
