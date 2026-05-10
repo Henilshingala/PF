@@ -62,168 +62,110 @@ export default function AboutMe() {
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
-          {/* PORTRAIT IMAGE - 3 columns */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="group relative lg:col-span-3 h-full min-h-[400px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
-          >
-            {/* Inner Glow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-60 z-10" />
-            
-            <Image
-              src="/Don.png"
-              alt="Henil Shingala Portrait"
-              fill
-              className="object-cover grayscale-[20%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
-              sizes="(max-width: 1024px) 100vw, 25vw"
-            />
-            
-            {/* Bottom Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-[#050816] to-transparent">
-              <p className="text-xl font-bold text-white">Henil Shingala</p>
-              <p className="text-xs font-medium uppercase tracking-widest text-accent mt-1">Engineer & Creator</p>
-            </div>
-          </motion.div>
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            {/* SQUARE PORTRAIT IMAGE - 5 columns */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative mx-auto lg:col-span-5 w-full max-w-[400px] aspect-square overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] backdrop-blur-xl group"
+            >
+              {/* Inner Glow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-60 z-10" />
+              
+              <Image
+                src="/Don.png"
+                alt="Henil Shingala Portrait"
+                fill
+                className="object-cover grayscale-[20%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+                sizes="(max-width: 1024px) 100vw, 400px"
+              />
+              
+              {/* Floating Badge */}
+              <div className="absolute top-6 right-6 z-20">
+                <div className="rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-accent backdrop-blur-md">
+                  Surat, IN
+                </div>
+              </div>
+            </motion.div>
 
-          {/* DEVELOPER PROFILE - 4.5 columns */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="group relative lg:col-span-5 flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
-          >
-            {/* Hover Glow */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <div className="relative z-10 flex h-full flex-col">
-              {/* Icon */}
+            {/* BIO & EXPERTISE - 7 columns */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="lg:col-span-7 flex flex-col"
+            >
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 border border-accent/20">
                 <User className="text-accent" size={26} />
               </div>
 
-              {/* Title */}
-              <h3 className="mt-7 text-3xl font-bold tracking-tight text-white">
-                Developer Profile
+              <h3 className="mt-7 text-4xl font-bold tracking-tight text-white">
+                Henil Shingala
               </h3>
-
-              {/* Intro */}
-              <p className="mt-6 text-base leading-relaxed text-white/80">
-                I&apos;m Henil Shingala, a final-year Diploma IT Engineering
-                student from Surat focused on backend engineering, Android
-                development, and scalable software systems.
+              
+              <p className="mt-2 text-lg font-medium text-accent">
+                Full Stack & Android Engineer
               </p>
 
-              {/* Stats */}
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-2xl font-bold text-white">16+</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
-                    Projects
-                  </p>
-                </div>
+              <div className="mt-8 space-y-6">
+                <p className="text-base leading-relaxed text-white/80">
+                  A final-year Diploma IT Engineering student from Surat focused on backend engineering, 
+                  Android development, and scalable software systems. I build production-oriented 
+                  applications with a strong focus on real-world usability and business workflows.
+                </p>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-2xl font-bold text-white">2</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
-                    Internships
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-2xl font-bold text-white">8.78</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
-                    CGPA
-                  </p>
-                </div>
+                <p className="text-base leading-relaxed text-white/80">
+                  My expertise lies in crafting high-performance digital experiences using 
+                  <span className="text-white font-semibold"> Django, Kotlin, and React</span>, 
+                  ensuring every project is production-ready from logic to deployment.
+                </p>
               </div>
 
-              {/* Pills */}
-              <div className="mt-8 flex flex-wrap gap-2">
+              {/* Core Focus Tags */}
+              <div className="mt-10 flex flex-wrap gap-3">
                 {[
-                  "📍 Surat, Gujarat",
-                  "💼 Open to Work",
-                  "⚡ Backend Focused",
-                ].map((pill) => (
-                  <span
-                    key={pill}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs text-white/70 transition-all duration-300 hover:border-accent/30 hover:text-white"
-                  >
-                    {pill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* WHAT I BUILD - 4.5 columns */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="group relative lg:col-span-4 flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
-          >
-            {/* Hover Glow */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <div className="relative z-10 flex h-full flex-col">
-              {/* Icon */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 border border-accent/20">
-                <Rocket className="text-accent" size={26} />
-              </div>
-
-              {/* Title */}
-              <h3 className="mt-7 text-3xl font-bold tracking-tight text-white">
-                What I Build
-              </h3>
-
-              {/* Expertise */}
-              <div className="mt-8 space-y-4">
-                {expertise.map((item) => (
+                  "Backend Systems",
+                  "Android Ecosystem",
+                  "AI/ML Integration",
+                  "Cloud Deployment"
+                ].map((tag) => (
                   <div
-                    key={item}
-                    className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4"
+                    key={tag}
+                    className="flex items-center gap-2 rounded-xl border border-white/5 bg-white/[0.04] px-4 py-2 text-xs font-semibold text-white/70"
                   >
-                    <Code2
-                      size={18}
-                      className="mt-1 shrink-0 text-accent"
-                    />
-
-                    <p className="text-xs leading-relaxed text-white/80">
-                      {item}
-                    </p>
+                    <div className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    {tag}
                   </div>
                 ))}
               </div>
+            </motion.div>
+          </div>
 
-              {/* Highlights */}
-              <div className="mt-auto pt-10">
-                <div className="space-y-3">
-                  {highlights.map((line) => (
-                    <div
-                      key={line}
-                      className="flex items-center gap-3"
-                    >
-                      <CheckCircle2
-                        size={16}
-                        className="shrink-0 text-accent"
-                      />
-
-                      <span className="text-xs text-white/80">
-                        {line}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          {/* WHAT I BUILD - Compact Grid below */}
+          <div className="mt-20">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {expertise.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:border-accent/30 hover:bg-white/[0.04]"
+                >
+                  <Code2 size={20} className="text-accent mb-4" />
+                  <p className="text-sm leading-relaxed text-white/70 group-hover:text-white transition-colors">
+                    {item}
+                  </p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </div>  </div>
       </div>
     </motion.section>
   );
