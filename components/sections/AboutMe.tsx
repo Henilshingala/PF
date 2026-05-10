@@ -72,6 +72,34 @@ export default function AboutMe() {
               viewport={{ once: true }}
               className="relative mx-auto lg:col-span-5 w-full max-w-[400px] aspect-square overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] backdrop-blur-xl group"
             >
+              {/* Infinite Rotating Light Effect */}
+              <motion.div
+                animate={{
+                  top: ["0%", "0%", "100%", "100%", "0%"],
+                  left: ["0%", "100%", "100%", "0%", "0%"],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute z-30 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/40 blur-[40px]"
+              />
+
+              <motion.div
+                animate={{
+                  top: ["0%", "0%", "100%", "100%", "0%"],
+                  left: ["0%", "100%", "100%", "0%", "0%"],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 0.1
+                }}
+                className="absolute z-30 h-1 w-20 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400 to-transparent blur-sm"
+              />
+
               {/* Inner Glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-60 z-10" />
               
