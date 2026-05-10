@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #050508;
+  --bg-dark-2: #0c0c12;
+  --bg-dark-3: #111118;
+  --bg-navy: #050a1a;
+  --bg-card-dark: #0d1b3e;
+  --bg-light: #f8f9ff;
+  --bg-white: #ffffff;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --accent-glow-strong: rgba(37, 99, 235, 0.25);
+  --text-primary-dark: #f8f8ff;
+  --text-primary-light: #0a0a0f;
+  --text-muted-dark: #9ca3af;
+  --text-muted-light: #6b7280;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --surface-dark: rgba(255, 255, 255, 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary-dark);
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-syne), sans-serif;
+}
+
+p,
+span,
+li,
+button,
+a {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.dark-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dark-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-4px);
+}
+
+.light-card {
+  background: rgba(10, 15, 31, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.light-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+}
