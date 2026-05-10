@@ -59,6 +59,8 @@ const outerOrbit = [
   { label: "Antigravity", emoji: "🛸", icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABLFBMVEVHcExDkOk3ifw0iv40iPYyifhGjfVRh/RQh/jvizo0iPgzifk1ivtvfdE1ivpNiOo2ivo9if5gr4lKpqc/nr48ivtAju82if48ivswjO1ViPI5if3wV0SsoZoyj+o0mPIvi/CFvmrrkyzwZjzCYHXajzrrXkOpaJC0t0bvW0DDYX+HtGfRX3DcXFOivlXieD3pV0qEuW0yiPy7uUfxhD83if88i/9eiu9hhuk0iP2dbqjTWmZ/gdTGXnk+ordQr52yZY9ctoyJeMJ4vm/rW0OMv1/WszHeoi68vkFwtXlGq6kxldUskOI2m8cvkOIxivE8lM41j+BHiPlOg+WQcqfUaVOum1W3q0iLmnN7e69bg8eycHRgirBjlp7BflZEht+YeIiEg5ChgHNqno0hSnXUAAAAT3RSTlMAJdI3/dwKAQMBFuyu/pZBiP36+/1UD2zz/f3mGgMpBWJOY3b2+dD93Eor/BH8LvuJEscZBEkdrvN6yMR7WHbMj5PtyeSQidV6/knvrcT4jLIn8QAAAUxJREFUKJGt0Od2gjAYBmB2WCJgARX3qtY66uzeeyE46+i8/3to1LYI2nP6o9+vJE/e5EsQ5F+KqdWYXyhcTSSSudBKZoqXV+lSprxSt66z/XSpe57cXBGMZ/u93nO3kMktR6sX+fxg8D7qFsqhJSye3cgfk7fXUWpvw21UXJZ9k/H4qbOeOqi52zmRfWut1nAI9djVEoMeQTPNl7bH09l1n3s7tYBhtKGeep0WPpwZQRAW5H3agepDyzT8ZKVC+q1gsEk5MHJnGpyAqyou6FZwG120aOwxwAkoQBCACjCrLJ7L3gcIHgfTIY3zktVUbQNe0iBjXxdRmi5hXmB/jwiD7PeswUt+kbKDmEHiP3tBnbSjdIQnuFh0oT2Nk3h0rqjA6aLjZZSoc2JjFlRIbIdFHMXuYFgdzHrXFJdBVbTI/GVR2m1wkQbLi3+vT/NkKnkCjEo1AAAAAElFTkSuQmCC" },
 ];
 
+import Image from "next/image";
+
 /* ─── OrbitItem ─── */
 function OrbitItem({
   angle,
@@ -124,9 +126,11 @@ function OrbitItem({
         style={{ willChange: "transform" }}
       >
         {icon && !imgError ? (
-          <img 
+          <Image 
             src={icon} 
             alt={`${label} logo`} 
+            width={32}
+            height={32}
             className={`${iconSizeClasses[size]} object-contain`}
             onError={() => setImgError(true)}
           />
