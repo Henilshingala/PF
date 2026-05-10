@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Code } from "lucide-react";
 import { sectionVariants } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 /* ─── Technology Data ─── */
 
@@ -59,8 +60,6 @@ const outerOrbit = [
   { label: "Antigravity", emoji: "🛸", icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABLFBMVEVHcExDkOk3ifw0iv40iPYyifhGjfVRh/RQh/jvizo0iPgzifk1ivtvfdE1ivpNiOo2ivo9if5gr4lKpqc/nr48ivtAju82if48ivswjO1ViPI5if3wV0SsoZoyj+o0mPIvi/CFvmrrkyzwZjzCYHXajzrrXkOpaJC0t0bvW0DDYX+HtGfRX3DcXFOivlXieD3pV0qEuW0yiPy7uUfxhD83if88i/9eiu9hhuk0iP2dbqjTWmZ/gdTGXnk+ordQr52yZY9ctoyJeMJ4vm/rW0OMv1/WszHeoi68vkFwtXlGq6kxldUskOI2m8cvkOIxivE8lM41j+BHiPlOg+WQcqfUaVOum1W3q0iLmnN7e69bg8eycHRgirBjlp7BflZEht+YeIiEg5ChgHNqno0hSnXUAAAAT3RSTlMAJdI3/dwKAQMBFuyu/pZBiP36+/1UD2zz/f3mGgMpBWJOY3b2+dD93Eor/BH8LvuJEscZBEkdrvN6yMR7WHbMj5PtyeSQidV6/knvrcT4jLIn8QAAAUxJREFUKJGt0Od2gjAYBmB2WCJgARX3qtY66uzeeyE46+i8/3to1LYI2nP6o9+vJE/e5EsQ5F+KqdWYXyhcTSSSudBKZoqXV+lSprxSt66z/XSpe57cXBGMZ/u93nO3kMktR6sX+fxg8D7qFsqhJSye3cgfk7fXUWpvw21UXJZ9k/H4qbOeOqi52zmRfWut1nAI9djVEoMeQTPNl7bH09l1n3s7tYBhtKGeep0WPpwZQRAW5H3agepDyzT8ZKVC+q1gsEk5MHJnGpyAqyou6FZwG120aOwxwAkoQBCACjCrLJ7L3gcIHgfTIY3zktVUbQNe0iBjXxdRmi5hXmB/jwiD7PeswUt+kbKDmEHiP3tBnbSjdIQnuFh0oT2Nk3h0rqjA6aLjZZSoc2JjFlRIbIdFHMXuYFgdzHrXFJdBVbTI/GVR2m1wkQbLi3+vT/NkKnkCjEo1AAAAAElFTkSuQmCC" },
 ];
 
-import Image from "next/image";
-
 /* ─── OrbitItem ─── */
 function OrbitItem({
   angle,
@@ -107,23 +106,19 @@ function OrbitItem({
   };
 
   const labelSize = {
-    xs: "text-[7px]",
-    sm: "text-[8px]",
-    md: "text-[9px]",
-    lg: "text-[10px]",
+    xs: "text-[5px]",
+    sm: "text-[6px]",
+    md: "text-[7px]",
+    lg: "text-[8px]",
   };
 
   return (
     <div
       className="absolute left-1/2 top-1/2"
-      style={{ 
-        transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-        willChange: "transform"
-      }}
+      style={{ transform: `translate(-50%, -50%) translate(${x}px, ${y}px)` }}
     >
       <div
         className={`flex ${sizeClasses[size]} flex-col items-center justify-center gap-0.5 rounded-xl border border-white/10 bg-white/[0.06] shadow-[0_10px_24px_rgba(37,99,235,0.08)] backdrop-blur-sm ${counterClass}`}
-        style={{ willChange: "transform" }}
       >
         {icon && !imgError ? (
           <Image 
@@ -189,13 +184,13 @@ export default function TechStackOrbit() {
         <p className="mb-4 text-xs font-semibold tracking-widest text-accent uppercase">
           Engineering Foundation
         </p>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white">
+        <h2 className="text-7xl font-black leading-tight text-white">
           Tech Ecosystem
         </h2>
       </div>
 
       {/* ── Fixed Orbit System ── */}
-      <div className="relative flex h-[400px] md:h-[500px] scale-[0.7] sm:scale-[0.85] md:scale-100 items-center justify-center">
+      <div className="relative flex h-[500px] items-center justify-center">
         {/* Center icon */}
         <div className="absolute inset-0 m-auto z-20 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-500/20 bg-white/[0.06] shadow-[0_0_30px_rgba(37,99,235,0.15)] backdrop-blur-sm">
           <Code className="h-7 w-7" color="#2563EB" />
@@ -207,7 +202,7 @@ export default function TechStackOrbit() {
         <div className="absolute inset-0 m-auto animate-[spin_90s_linear_infinite] rounded-full border-2 border-dashed border-blue-400/10" style={{ height: outerDia, width: outerDia }} />
 
         {/* Inner Orbit — Programming Languages (anti-clockwise, fast) */}
-        <div className="absolute inset-0 m-auto animate-[spin_22s_linear_infinite_reverse]" style={{ height: innerDia, width: innerDia, transform: 'translateZ(0)', willChange: "transform" }}>
+        <div className="absolute inset-0 m-auto animate-[spin_22s_linear_infinite_reverse]" style={{ height: innerDia, width: innerDia }}>
           {innerOrbit.map((tech, i) => (
             <OrbitItem
               key={tech.label}
@@ -223,7 +218,7 @@ export default function TechStackOrbit() {
         </div>
 
         {/* Middle Orbit — Frameworks & Libraries (clockwise, medium) */}
-        <div className="absolute inset-0 m-auto animate-[spin_36s_linear_infinite]" style={{ height: middleDia, width: middleDia, transform: 'translateZ(0)', willChange: "transform" }}>
+        <div className="absolute inset-0 m-auto animate-[spin_36s_linear_infinite]" style={{ height: middleDia, width: middleDia }}>
           {middleOrbit.map((tech, i) => (
             <OrbitItem
               key={tech.label}
@@ -239,7 +234,7 @@ export default function TechStackOrbit() {
         </div>
 
         {/* Outer Orbit — Tools & Platforms (anti-clockwise, slow) */}
-        <div className="absolute inset-0 m-auto animate-[spin_54s_linear_infinite_reverse]" style={{ height: outerDia, width: outerDia, transform: 'translateZ(0)', willChange: "transform" }}>
+        <div className="absolute inset-0 m-auto animate-[spin_54s_linear_infinite_reverse]" style={{ height: outerDia, width: outerDia }}>
           {outerOrbit.map((tech, i) => (
             <OrbitItem
               key={tech.label}
