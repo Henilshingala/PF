@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { sectionVariants } from "@/lib/utils";
 
 const highlights = [
@@ -60,15 +61,41 @@ export default function AboutMe() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* LEFT CARD */}
+        {/* Content Layout */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
+          {/* PORTRAIT IMAGE - 3 columns */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="group relative flex min-h-[540px] flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
+            className="group relative lg:col-span-3 h-full min-h-[400px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+          >
+            {/* Inner Glow */}
+            <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-60 z-10" />
+            
+            <Image
+              src="/Don.png"
+              alt="Henil Shingala Portrait"
+              fill
+              className="object-cover grayscale-[20%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+              sizes="(max-width: 1024px) 100vw, 25vw"
+            />
+            
+            {/* Bottom Info Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-[#050816] to-transparent">
+              <p className="text-xl font-bold text-white">Henil Shingala</p>
+              <p className="text-xs font-medium uppercase tracking-widest text-accent mt-1">Engineer & Creator</p>
+            </div>
+          </motion.div>
+
+          {/* DEVELOPER PROFILE - 4.5 columns */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="group relative lg:col-span-5 flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
           >
             {/* Hover Glow */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -85,44 +112,38 @@ export default function AboutMe() {
               </h3>
 
               {/* Intro */}
-              <p className="mt-6 text-base leading-8 text-white/80">
+              <p className="mt-6 text-base leading-relaxed text-white/80">
                 I&apos;m Henil Shingala, a final-year Diploma IT Engineering
                 student from Surat focused on backend engineering, Android
                 development, and scalable software systems.
               </p>
 
-              <p className="mt-5 text-base leading-8 text-white/80">
-                I build production-oriented applications using Django, Kotlin,
-                SQLite, Firebase, and AWS with strong focus on real-world
-                usability, deployment, and business workflows.
-              </p>
-
               {/* Stats */}
-              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-2xl font-bold text-white">16+</p>
-                  <p className="mt-1 text-xs uppercase tracking-wide text-white/60">
+                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
                     Projects
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-2xl font-bold text-white">2</p>
-                  <p className="mt-1 text-xs uppercase tracking-wide text-white/60">
+                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
                     Internships
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-2xl font-bold text-white">8.78</p>
-                  <p className="mt-1 text-xs uppercase tracking-wide text-white/60">
+                  <p className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
                     CGPA
                   </p>
                 </div>
               </div>
 
               {/* Pills */}
-              <div className="mt-auto flex flex-wrap gap-3 pt-10">
+              <div className="mt-8 flex flex-wrap gap-2">
                 {[
                   "📍 Surat, Gujarat",
                   "💼 Open to Work",
@@ -130,7 +151,7 @@ export default function AboutMe() {
                 ].map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/70 transition-all duration-300 hover:border-accent/30 hover:text-white"
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs text-white/70 transition-all duration-300 hover:border-accent/30 hover:text-white"
                   >
                     {pill}
                   </span>
@@ -139,13 +160,13 @@ export default function AboutMe() {
             </div>
           </motion.div>
 
-          {/* RIGHT CARD */}
+          {/* WHAT I BUILD - 4.5 columns */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="group relative flex min-h-[540px] flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
+            className="group relative lg:col-span-4 flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.12)] md:p-10"
           >
             {/* Hover Glow */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -162,7 +183,7 @@ export default function AboutMe() {
               </h3>
 
               {/* Expertise */}
-              <div className="mt-8 space-y-5">
+              <div className="mt-8 space-y-4">
                 {expertise.map((item) => (
                   <div
                     key={item}
@@ -173,7 +194,7 @@ export default function AboutMe() {
                       className="mt-1 shrink-0 text-accent"
                     />
 
-                    <p className="text-sm leading-7 text-white/80">
+                    <p className="text-xs leading-relaxed text-white/80">
                       {item}
                     </p>
                   </div>
@@ -181,27 +202,19 @@ export default function AboutMe() {
               </div>
 
               {/* Highlights */}
-              <div className="mt-10">
-                <div className="mb-5 flex items-center gap-2">
-                  <Briefcase size={18} className="text-accent" />
-
-                  <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
-                    Experience Highlights
-                  </h4>
-                </div>
-
-                <div className="space-y-4">
+              <div className="mt-auto pt-10">
+                <div className="space-y-3">
                   {highlights.map((line) => (
                     <div
                       key={line}
                       className="flex items-center gap-3"
                     >
                       <CheckCircle2
-                        size={18}
+                        size={16}
                         className="shrink-0 text-accent"
                       />
 
-                      <span className="text-sm text-white/80">
+                      <span className="text-xs text-white/80">
                         {line}
                       </span>
                     </div>
