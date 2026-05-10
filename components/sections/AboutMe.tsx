@@ -165,7 +165,7 @@ export default function AboutMe() {
               ))}
             </div>
           </div>
-        </div>  </div>
+        </div>
       </div>
     </motion.section>
   );
